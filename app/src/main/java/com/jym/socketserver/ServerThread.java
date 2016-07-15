@@ -26,7 +26,7 @@ public class ServerThread implements Runnable {
 
     private Socket socket;
     private String TAG = this.getClass().getName();
-    private int BUFF_SIZE = 1024;
+    private int BUFF_SIZE = 1024 * 100;
 
     public ServerThread(Socket socket) {
         this.socket = socket;
@@ -65,7 +65,7 @@ public class ServerThread implements Runnable {
             innerInputStream.read(buff, 0, 10);
 
             String IP = byte2int(buff[4]) + "." + byte2int(buff[5]) + "." + byte2int(buff[6]) + "." + byte2int(buff[7]);
-            int port = buff[8] * 256 + buff[9];
+            int port = byte2int(buff[8]) * 256 + byte2int(buff[9]);
 
             Log.e("ServerThread", "Connected to " + IP + ":" + port);
             Socket outerSocket = new Socket(IP, port);
