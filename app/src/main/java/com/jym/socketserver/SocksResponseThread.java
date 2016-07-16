@@ -15,7 +15,7 @@ public class SocksResponseThread extends Thread {
 
     private InputStream in;
     private OutputStream out;
-    private int BUFF_SIZE = 1024 * 10;
+    private int BUFF_SIZE = 1024 * 100;
 
     public SocksResponseThread(InputStream in, OutputStream out) {
         this.in = in;
