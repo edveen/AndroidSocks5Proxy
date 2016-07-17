@@ -1,10 +1,10 @@
 package com.jym.socketserver;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
-import java.io.DataInput;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -35,8 +35,17 @@ public class SocksResponseThread extends Thread {
                 }
                 out.flush();
             } catch (Exception e) {
-                break;
+                e.printStackTrace();
+//                Log.d("#####------",readbytes+"");
+//                if (MainActivity.networkInfo.isAvailable() == false){
+//                    NetworkStateReceiver.threadsList.add(this);
+//                    try {
+//                        wait();
+//                    } catch (InterruptedException e1) {e1.printStackTrace();}
+//                }
+                continue;
             }
         }
     }
+
 }
