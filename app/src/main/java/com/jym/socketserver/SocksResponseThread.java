@@ -36,14 +36,6 @@ public class SocksResponseThread extends Thread {
                 out.flush();
             } catch (Exception e) {
                 e.printStackTrace();
-//                Log.d("#####------",readbytes+"");
-//                if (MainActivity.networkInfo.isAvailable() == false){
-//                    NetworkStateReceiver.threadsList.add(this);
-//                    try {
-//                        wait();
-//                    } catch (InterruptedException e1) {e1.printStackTrace();}
-//                }
-                continue;
             }
         }
     }
